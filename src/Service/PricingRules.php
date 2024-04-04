@@ -26,15 +26,18 @@ class PricingRules
         $price = $product->getPrice();
         $freePairs = intdiv($quantity, 2);
 
-        return ($quantity - $freePairs) * $price;
+        return round(($quantity - $freePairs) * $price, 2);
     }
 
     private function applyVolumeDiscount(Product $product, int $quantity, float $discountPrice, int $discountThreshold): float
     {
         $price = $product->getPrice();
 
-        return $discountThreshold >= $quantity ?
-            $quantity * $discountPrice :
-            $quantity * $price;
+        return round(
+            $discountThreshold <= $quantity ?
+                $quantity * $discountPrice :
+                $quantity * $price,
+            2
+        );
     }
 }
