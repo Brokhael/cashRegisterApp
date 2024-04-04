@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Tests;
+
 use PHPUnit\Framework\TestCase;
 use App\Entity\Product;
 use App\Service\CashRegister;
