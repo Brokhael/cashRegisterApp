@@ -6,10 +6,10 @@ use App\Entity\Product;
 
 class PricingRules
 {
-    public const float STRAWBERRIES_DC_PRICE = 4.5;
-    public const int STRAWBERRIES_DC_TRESHHOLD = 3;
-    public const int|float COFFEE_DC_RATIO = 2 / 3;
-    public const int COFFEE_DC_TRESHHOLD = 3;
+    public const STRAWBERRIES_DC_PRICE = 4.5;
+    public const STRAWBERRIES_DC_TRESHHOLD = 3;
+    public const COFFEE_DC_RATIO = 2 / 3;
+    public const COFFEE_DC_TRESHHOLD = 3;
 
     public function applyRules(Product $product, int $quantity): float
     {
